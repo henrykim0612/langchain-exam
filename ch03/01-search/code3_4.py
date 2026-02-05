@@ -17,8 +17,6 @@ db = PGVector(
     embeddings=embeddings_model
 )
 
-query = '고대 그리스 철학사의 주요 인물은 누구인가요?'
-
 retriever = db.as_retriever(search_kwargs={"k": 2})
 
 prompt = ChatPromptTemplate.from_template(
@@ -43,5 +41,7 @@ def qa(input):
 
 
 # 실행
+query = '고대 그리스 철학사의 주요 인물은 누구인가요?'
+
 result = qa.invoke(query)
 print(result)

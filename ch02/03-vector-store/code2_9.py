@@ -16,4 +16,5 @@ documents = text_splitter.split_documents(raw_documents)
 # 문서에 대한 임베딩 생성
 embeddings_model = OpenAIEmbeddings(model="text-embedding-3-small")
 
+# 저장
 db = PGVector.from_documents(documents, embeddings_model, connection=connection)
