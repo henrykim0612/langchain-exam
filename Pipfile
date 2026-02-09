@@ -12,6 +12,7 @@ langchain-postgres = "*"
 beautifulsoup4 = "*"
 pypdf = "*"
 langchain-classic = "*"
+langgraph = "*"
 
 [dev-packages]
 
