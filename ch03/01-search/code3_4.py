@@ -1,5 +1,5 @@
-# 관련 문서를 조회한 후, 마지막으로 해당 문서를 원본 프롬프트의 컨텍스트에 추가한 다음 LLM을 호출해 최종 출력을 생성
-# (캡슐화)
+# 관련 문서를 조회한 후, 마지막으로 해당 문서를 원본 프롬프트의 컨텍스트에 추가한 다음 LLM을 호출해 최종 출력을 생성(캡슐화 방식)
+
 from langchain_core.runnables import chain
 
 from langchain_openai import OpenAIEmbeddings

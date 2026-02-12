@@ -13,6 +13,7 @@ beautifulsoup4 = "*"
 pypdf = "*"
 langchain-classic = "*"
 langgraph = "*"
+ddgs = "*"
 
 [dev-packages]
 
