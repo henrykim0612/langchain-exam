@@ -31,19 +31,20 @@ class State(TypedDict):
 
 def model_node(state: State) -> State:
     res = model.invoke(state['messages'])
-    return {'messages': res}
+    return {'messages': [res]}
 
 
 def first_model(state: State) -> State:
     query = state['messages'][-1].content
     search_tool_call = ToolCall(name='duckduckgo_search', args={'query': query}, id=uuid4().hex)
-    return {'messages': AIMessage(content='', tool_calls=[search_tool_call])}
+    return {'messages': [AIMessage(content='', tool_calls=[search_tool_call])]}
 
 
 builder = StateGraph(State)
 builder.add_node('first_model', first_model)
 builder.add_node('model', model_node)
 builder.add_node('tools', ToolNode(tools))
+
 builder.add_edge(START, 'first_model')
 builder.add_edge('first_model', 'tools')
 builder.add_conditional_edges('model', tools_condition)

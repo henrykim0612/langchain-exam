@@ -20,7 +20,7 @@ def calculator(query: str) -> str:
 
 search = DuckDuckGoSearchRun()
 tools = [search, calculator]
-model = ChatOpenAI(model='gpt-5-mini', temperature=0.1).bind_tools(tools)
+model = ChatOpenAI(model='gpt-5-mini', temperature=0.1).bind_tools(tools, tool_choice="required")
 
 
 class State(TypedDict):
@@ -29,7 +29,7 @@ class State(TypedDict):
 
 def model_node(state: State) -> State:
     res = model.invoke(state['messages'])
-    return {'messages': res}
+    return {'messages': [res]}
 
 
 builder = StateGraph(State)

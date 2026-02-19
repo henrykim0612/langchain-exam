@@ -41,7 +41,7 @@ class State(TypedDict):
 def model_node(state: State) -> State:
     selected_tools = [tool for tool in tools if tool.name in state['selected_tools']]
     res = model.bind_tools(selected_tools).invoke(state['messages'])
-    return {'messages': res}
+    return {'messages': [res]}
 
 
 def select_tools(state: State) -> State:
@@ -54,6 +54,7 @@ builder = StateGraph(State)
 builder.add_node('select_tools', select_tools)
 builder.add_node('model', model_node)
 builder.add_node('tools', ToolNode(tools))
+
 builder.add_edge(START, 'select_tools')
 builder.add_edge('select_tools', 'model')
 builder.add_conditional_edges('model', tools_condition)
