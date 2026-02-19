@@ -22,6 +22,6 @@ merged = merge_message_runs(messages)
 print(merged)
 
 # 선언형 구성
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 merger = merge_message_runs()
 chain = merger | model

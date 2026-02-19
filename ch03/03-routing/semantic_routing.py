@@ -35,7 +35,7 @@ def prompt_router(query):
     return PromptTemplate.from_template(most_similar)
 
 
-semantic_router = (prompt_router | ChatOpenAI(model='gpt-5-nano') | StrOutputParser())
+semantic_router = (prompt_router | ChatOpenAI(model='gpt-5-mini') | StrOutputParser())
 
 result = semantic_router.invoke('상대성 이론이란 무엇인가요?')
 print('\n의미론적 라우팅 결과: ', result)

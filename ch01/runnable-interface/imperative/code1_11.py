@@ -11,7 +11,8 @@ template = ChatPromptTemplate.from_messages([
     ('human', '{question}')
 ])
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
+
 
 # 함수로 결합한다
 # 데코레이터 @chain 을 추가해 작성한 함수에 Runnable 인터페이스를 추가한다
@@ -19,6 +20,7 @@ model = ChatOpenAI(model='gpt-5-nano')
 def chatbot(values):
     prompt = template.invoke(values)
     return model.invoke(prompt)
+
 
 # 사용한다
 response = chatbot.invoke({'question': '거대 언어 모델은 어디서 제공하나요?!'})

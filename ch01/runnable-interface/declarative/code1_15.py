@@ -9,7 +9,7 @@ template = ChatPromptTemplate.from_messages([
     ('human', '{question}')
 ])
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 
 # 연산자 | 로 결합한다
 chatbot = template | model

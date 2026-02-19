@@ -12,9 +12,9 @@ from langgraph.graph.message import add_messages
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
 # SQL 쿼리 생성용
-model_low_temp = ChatOpenAI(model='gpt-5-nano', temperature=0.1)
+model_low_temp = ChatOpenAI(model='gpt-5-mini', temperature=0.1)
 # 자연어 출력 생성용
-model_high_temp = ChatOpenAI(model='gpt-5-nano', temperature=0.7)
+model_high_temp = ChatOpenAI(model='gpt-5-mini', temperature=0.7)
 
 
 class State(TypedDict):

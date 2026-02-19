@@ -10,7 +10,8 @@ template = ChatPromptTemplate.from_messages([
     ('human', '{question}')
 ])
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
+
 
 @chain
 def chatbot(values):
@@ -18,7 +19,8 @@ def chatbot(values):
     for token in model.stream(prompt):
         yield token
 
+
 for part in chatbot.stream({
-   'question': '거대 언어 모델은 어디서 제공하나요?!'
+    'question': '거대 언어 모델은 어디서 제공하나요?!'
 }):
     print(part)

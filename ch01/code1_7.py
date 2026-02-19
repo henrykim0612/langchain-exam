@@ -5,7 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 template = ChatPromptTemplate.from_messages([
     ("system", '''아래 작성한 컨텍스트(Context)를 기반으로 질문(Question)에 대답하세요. 제공된 정보로 대답할 수 없는 질문이라면 "모르겠어요" 라고 답하세요.'''),
     ("human", "Context: {context}"),
-    ('human' , "Question: {question}")
+    ('human', "Question: {question}")
 ])
 
 # 'prompt' 와 'completion' 은 template 과 model 을 실행한 결과다
@@ -16,6 +16,6 @@ prompt = template.invoke({
     'question': '거대 언어 모델은 어디서 제공하나요?'
 })
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 
 print(model.invoke(prompt))

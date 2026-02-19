@@ -2,7 +2,7 @@
 
 from langchain_openai import ChatOpenAI
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 
 completion = model.invoke('반가워요!')
 print(completion)
@@ -12,5 +12,3 @@ print(completions)
 
 for token in model.stream('잘 있어요!'):
     print(token)
-
-

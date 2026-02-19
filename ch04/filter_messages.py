@@ -29,6 +29,6 @@ filtered_messages = filter_messages(
 print('\n특정 유형과 ID로 필터링한 메시지:', filtered_messages)
 
 # 선언형 구성
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 filter_ = filter_messages(exclude_names=['example_user', 'example_assistant'])
 chain = filter_ | model

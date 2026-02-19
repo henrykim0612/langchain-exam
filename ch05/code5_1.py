@@ -17,7 +17,7 @@ class State(TypedDict):
 
 builder = StateGraph(State)
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 
 
 def chatbot(state: State):

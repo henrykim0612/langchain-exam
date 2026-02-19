@@ -9,7 +9,7 @@ template = ChatPromptTemplate.from_messages([
     ('human', '{question}')
 ])
 
-model = ChatOpenAI(model='gpt-5-nano')
+model = ChatOpenAI(model='gpt-5-mini')
 
 # 연산자 | 로 결합한다
 chatbot = template | model
@@ -18,6 +18,8 @@ chatbot = template | model
 async def main():
     return await chatbot.ainvoke({'question': '거대 언어 모델은 어디서 제공하나요?'})
 
+
 if __name__ == "__main__":
     import asyncio
+
     print(asyncio.run(main()))

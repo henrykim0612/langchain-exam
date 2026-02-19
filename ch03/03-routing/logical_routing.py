@@ -19,7 +19,7 @@ class RouteQuery(BaseModel):
 
 # 프롬프트 템플릿
 # 함수 호출
-llm = ChatOpenAI(model='gpt-5-nano', temperature=0)
+llm = ChatOpenAI(model='gpt-5-mini', temperature=0)
 
 '''
 with_structured_output: 주어진 스키마와 일치하도록 형식화된 출력을 반환하는 모델 래퍼

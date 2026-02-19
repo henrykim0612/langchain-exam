@@ -25,7 +25,7 @@ search = DuckDuckGoSearchRun()
 tools = [search, calculator]
 
 embeddings = OpenAIEmbeddings()
-model = ChatOpenAI(model='gpt-5-nano', temperature=0.1)
+model = ChatOpenAI(model='gpt-5-mini', temperature=0.1)
 
 tools_retriever = InMemoryVectorStore.from_documents(
     [Document(tool.description, metadata={'name': tool.name}) for tool in tools],

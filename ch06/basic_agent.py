@@ -20,7 +20,7 @@ def calculator(query: str) -> str:
 
 search = DuckDuckGoSearchRun()
 tools = [search, calculator]
-model = ChatOpenAI(model='gpt-5-nano', temperature=0.1).bind_tools(tools)
+model = ChatOpenAI(model='gpt-5-mini', temperature=0.1).bind_tools(tools)
 
 
 class State(TypedDict):
